@@ -220,7 +220,7 @@ class RingMachine:
             biggest_card.sender
         )
         self.has_token=False
-        self._send_udp_message(message_to_send.to_bytes(), MACHINE_ADDR_MAP[message_to_send.target])
+        self._send_udp_message(message_to_send.to_bytes(), self.next_machine_address)
     
     def _calculate_points(self):
         for card in self.hand:
